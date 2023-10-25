@@ -1,9 +1,17 @@
-  .visually-hidden {
-    clip-path: inset(100%);
-    clip: rect(1px, 1px, 1px, 1px);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
+/* CSS for visually hidden text - may be used to insert additional text into links */
+.visually-hidden {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* When a site totally disables the browser's default focus outline, one might add global CSS to add a custom focus outline. */
+/* NOTE: custom focus indicators must conform to color contrast requirements. They must have 3:1 color contrast with the surrounding background */
+*:focus {
+  outline: 2px dotted black !important;
+}
+

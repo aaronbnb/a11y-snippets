@@ -27,10 +27,10 @@ class rovingTabindex {
       var item = this.items[i];
       if (currentItem === item) {
         item.setAttribute('data-selected', 'true');
-        item.tabIndex = 0;
+        item.setAttribute ('tabindex', '0');
       } else {
         item.setAttribute('data-selected', 'false');
-        item.tabIndex = -1;
+        item.setAttribute ('tabindex', '-1');
       }
     }
   }
@@ -44,9 +44,11 @@ class rovingTabindex {
 
     if (currentItem === this.firstItem) {
       this.moveFocusToItem(this.lastItem);
+      this.setSelectedItem(this.lastItem);
     } else {
       index = this.items.indexOf(currentItem);
       this.moveFocusToItem(this.items[index - 1]);
+      this.setSelectedItem(this.items[index - 1]);
     }
   }
 
@@ -55,9 +57,11 @@ class rovingTabindex {
 
     if (currentItem === this.lastItem) {
       this.moveFocusToItem(this.firstItem);
+      this.setSelectedItem(this.firstItem);
     } else {
       index = this.items.indexOf(currentItem);
       this.moveFocusToItem(this.items[index + 1]);
+      this.setSelectedItem(this.items[index + 1]);
     }
   }
   /* EVENT HANDLERS */
